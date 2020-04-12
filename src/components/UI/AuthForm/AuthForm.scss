@@ -1,0 +1,9 @@
+.auth-wrapper {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+
+    @media (min-width: 768px) {
+        width: 350px;
+    }
+}

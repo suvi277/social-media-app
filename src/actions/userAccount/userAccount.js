@@ -1,16 +1,17 @@
-import { SIGN_IN, SIGN_OUT, SIGN_UP } from '@app/constants/actionTypes';
+import { SIGN_IN, SIGN_OUT } from '@app/constants/actionTypes';
 import { history } from '@app/store';
 
 /**
  * Sign in user 
  */
-export function signInUser(email, password) {
+export function signInUser(email, password, users) {
 	history.push('/');
 	return {
 		type: SIGN_IN,
 		payload: {
 			email,
-			password
+			password,
+			users
 		}
 	};
 }
@@ -21,18 +22,5 @@ export function signInUser(email, password) {
 export function signOutUser() {
 	return {
 		type: SIGN_OUT
-	};
-}
-
-/**
- * Sign Up user 
- */
-export function signUpUser(user) {
-	history.push('/login');
-	return {
-		type: SIGN_UP,
-		payload: {
-			user
-		}
 	};
 }

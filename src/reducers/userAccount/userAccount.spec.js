@@ -1,5 +1,5 @@
 import { userAccount, initialState } from './userAccount';
-import { SIGN_IN, SIGN_OUT, SIGN_UP } from '@app/constants/actionTypes';
+import { SIGN_IN, SIGN_OUT } from '@app/constants/actionTypes';
 
 describe('User Account Reducer', () => {
 	it('should provide initial state', () => {
@@ -16,8 +16,7 @@ describe('User Account Reducer', () => {
 				password: 'password2'
 			};
 			const state = {
-				...initialState,
-				users: [ mockUser ]
+				...initialState
 			};
 
 			expect(
@@ -25,7 +24,8 @@ describe('User Account Reducer', () => {
 					type: SIGN_IN,
 					payload: {
 						email: 'fname2@example.com',
-						password: 'password2'
+						password: 'password2',
+						users: [ mockUser ]
 					}
 				})
 			).toEqual({
@@ -41,7 +41,8 @@ describe('User Account Reducer', () => {
 					type: SIGN_IN,
 					payload: {
 						email: 'fname2@example.com',
-						password: 'password5'
+						password: 'password5',
+						users: []
 					}
 				})
 			).toEqual({
@@ -60,26 +61,6 @@ describe('User Account Reducer', () => {
 			).toEqual({
 				...initialState,
 				signedIn: false
-			});
-		});
-	});
-
-	describe('SIGN_UP', () => {
-		it('should return the updated list of users', () => {
-			const mockUser = {
-				email: 'flast@example.com',
-				firstName: 'First',
-				lastName: 'LastName',
-				password: 'pass'
-			};
-			expect(
-				userAccount(initialState, {
-					type: SIGN_UP,
-					payload: { user: mockUser }
-				})
-			).toEqual({
-				...initialState,
-				users: [ ...initialState.users, { ...mockUser, id: 4 } ]
 			});
 		});
 	});

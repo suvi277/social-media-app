@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signInUser } from '@app/actions';
 import { AuthForm, TextField, Button } from '@app/components/UI';
 
-const SignIn = ({ isSignedIn, signInUser }) => {
+const SignIn = ({ isSignedIn, signInUser, users }) => {
 	const initialField = {
 		email: '',
 		password: ''
@@ -21,7 +21,7 @@ const SignIn = ({ isSignedIn, signInUser }) => {
 	const submitForm = (e) => {
 		e.preventDefault();
 		if (email && password) {
-			signInUser(email, password);
+			signInUser(email, password, users);
 			// Reset Fields
 			setFields(initialField);
 		}
@@ -68,12 +68,13 @@ const SignIn = ({ isSignedIn, signInUser }) => {
 	);
 };
 
-const mapStateToProps = (state) => ({
-	isSignedIn: state.userAccount.signedIn
+const mapStateToProps = ({ userAccount, userProfiles }) => ({
+	isSignedIn: userAccount.signedIn,
+	users: userProfiles.users
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	signInUser: (email, password) => dispatch(signInUser(email, password))
+	signInUser: (email, password, users) => dispatch(signInUser(email, password, users))
 });
 
 // - Connect component to redux store

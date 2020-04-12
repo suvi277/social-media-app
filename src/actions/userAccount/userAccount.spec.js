@@ -1,4 +1,4 @@
-import { signInUser, signUpUser, signOutUser } from './userAccount';
+import { signInUser, signOutUser } from './userAccount';
 import { SIGN_IN, SIGN_OUT, SIGN_UP } from '@app/constants/actionTypes';
 
 describe('User Account Actions', () => {
@@ -11,20 +11,6 @@ describe('User Account Actions', () => {
 			payload: {
 				email: mockEmail,
 				password: mockPass
-			}
-		});
-	});
-
-	it('signUpUser should return SIGN_UP action with new user passed in the argument', () => {
-		const mockUser = {
-			firstName: 'First',
-			lastName: 'Last',
-			email: 'first@gmail.com'
-		};
-		expect(signUpUser(mockUser)).toEqual({
-			type: SIGN_UP,
-			payload: {
-				user: mockUser
 			}
 		});
 	});

@@ -1,4 +1,5 @@
-import { UPDATE_PROFILE, EDIT_USER, CANCEL_EDIT_USER } from '@app/constants/actionTypes';
+import { UPDATE_PROFILE, EDIT_USER, CANCEL_EDIT_USER, SIGN_UP } from '@app/constants/actionTypes';
+import { history } from '@app/store';
 
 /**
  * Update user info
@@ -27,5 +28,18 @@ export function editUser(user) {
 export function cancelEditing(user) {
 	return {
 		type: CANCEL_EDIT_USER
+	};
+}
+
+/**
+ * Sign Up user 
+ */
+export function signUpUser(signedUpUser) {
+	history.push('/sign-in');
+	return {
+		type: SIGN_UP,
+		payload: {
+			signedUpUser
+		}
 	};
 }

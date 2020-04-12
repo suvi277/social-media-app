@@ -23,6 +23,9 @@ describe('SignIn container', () => {
 			store = createMockStore({
 				userAccount: {
 					signedIn: true
+				},
+				userProfiles: {
+					users: []
 				}
 			});
 			wrapper = mount(
@@ -40,10 +43,10 @@ describe('SignIn container', () => {
 	});
 
 	describe('when mounted with not signed in', () => {
-		let store, wrapper, component;
+		let store, wrapper, component, mockUser;
 
 		beforeEach(() => {
-			const mockUser = {
+			mockUser = {
 				id: 1,
 				firstName: 'First',
 				lastName: 'Last',
@@ -52,7 +55,9 @@ describe('SignIn container', () => {
 			};
 			store = createMockStore({
 				userAccount: {
-					signedIn: false,
+					signedIn: false
+				},
+				userProfiles: {
 					users: [ mockUser ]
 				}
 			});
@@ -78,7 +83,7 @@ describe('SignIn container', () => {
 		});
 
 		it('should map State to Props', () => {
-			const expectedPropKeys = [ 'isSignedIn', 'signInUser' ];
+			const expectedPropKeys = [ 'isSignedIn', 'signInUser', 'users' ];
 			expect(Object.keys(component.props())).toEqual(expect.arrayContaining(expectedPropKeys));
 		});
 
@@ -89,7 +94,7 @@ describe('SignIn container', () => {
 			component.find('input[name="password"]').simulate('change', { target: { name: 'password', value: 'acd' } });
 			component.find('form').simulate('submit');
 			expect(store.dispatch).toHaveBeenCalledWith({
-				payload: { email: 'first@gmail.com', password: 'acd' },
+				payload: { email: 'first@gmail.com', password: 'acd', users: [ mockUser ] },
 				type: 'SIGN-IN'
 			});
 		});
@@ -97,7 +102,7 @@ describe('SignIn container', () => {
 		it('should not dispatches SIGN IN Action on submit with only email and not password', () => {
 			component
 				.find('input[name="email"]')
-				.simulate('change', { target: { name: 'email', value: 'first@gmail.com' } });
+				.simulate('change', { target: { name: 'email', value: 'first@gmail.com', users: [ mockUser ] } });
 
 			component.find('form').simulate('submit');
 			expect(store.dispatch).not.toHaveBeenCalled();

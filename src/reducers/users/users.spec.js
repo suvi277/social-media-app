@@ -1,5 +1,5 @@
 import { userProfiles, initialState } from './users';
-import { UPDATE_PROFILE, EDIT_USER } from '@app/constants/actionTypes';
+import { UPDATE_PROFILE, EDIT_USER, SIGN_UP } from '@app/constants/actionTypes';
 
 describe('Users Reducer', () => {
 	it('should provide initial state', () => {
@@ -34,6 +34,26 @@ describe('Users Reducer', () => {
 			).toEqual({
 				...initialState,
 				isEditing: true
+			});
+		});
+	});
+
+	describe('SIGN_UP', () => {
+		it('should return the updated list of users', () => {
+			const mockUser = {
+				email: 'flast@example.com',
+				firstName: 'First',
+				lastName: 'LastName',
+				password: 'pass'
+			};
+			expect(
+				userProfiles(initialState, {
+					type: SIGN_UP,
+					payload: { signedUpUser: mockUser }
+				})
+			).toEqual({
+				...initialState,
+				users: [ ...initialState.users, { ...mockUser, id: 4 } ]
 			});
 		});
 	});

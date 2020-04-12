@@ -1,1 +1,1 @@
-export { updateProfile, editUser, cancelEditing } from './users';
+export { updateProfile, editUser, cancelEditing, signUpUser } from './users';

@@ -87,7 +87,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		signUpUser: () => dispatch(signUpUser())
+		signUpUser: (user) => dispatch(signUpUser(user))
 	};
 };
 

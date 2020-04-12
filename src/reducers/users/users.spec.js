@@ -53,7 +53,7 @@ describe('Users Reducer', () => {
 				})
 			).toEqual({
 				...initialState,
-				users: [ ...initialState.users, { ...mockUser, id: 4 } ]
+				users: [ ...initialState.users, { ...mockUser, id: 6 } ]
 			});
 		});
 	});

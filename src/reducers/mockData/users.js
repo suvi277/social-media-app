@@ -8,16 +8,30 @@ export const users = [
 	},
 	{
 		id: 2,
-		email: 'fname2@example.com',
-		firstName: 'FirstName2',
-		lastName: 'LastName2',
-		password: 'password2'
+		email: 'mark@gmail.com',
+		firstName: 'Mark',
+		lastName: 'Zeal',
+		password: 'password5'
 	},
 	{
 		id: 3,
-		email: 'fname3@example.com',
-		firstName: 'FirstName3',
-		lastName: 'LastName3',
+		email: 'ajay@yahoo.com',
+		firstName: 'Ajay',
+		lastName: 'Devgan',
+		password: 'password9'
+	},
+	{
+		id: 4,
+		email: 'will@yahoo.com',
+		firstName: 'William',
+		lastName: 'Andrews',
+		password: 'password3'
+	},
+	{
+		id: 5,
+		email: 'abraham@yahoo.com',
+		firstName: 'Abin',
+		lastName: 'Abraham',
 		password: 'password3'
 	}
 ];

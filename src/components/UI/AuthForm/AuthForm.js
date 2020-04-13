@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './AuthForm.scss';
 
@@ -8,6 +9,11 @@ const AuthForm = ({ title, children }) => {
 			{children}
 		</div>
 	);
+};
+
+AuthForm.propTypes = {
+	children: PropTypes.any,
+	title: PropTypes.string
 };
 
 export { AuthForm };

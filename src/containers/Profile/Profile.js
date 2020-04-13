@@ -23,9 +23,9 @@ const Profile = ({ users, currentUserId, activeUser, isEditing, updateProfile, c
 		<Fragment>
 			<h2>Profile Details</h2>
 			{isEditing ? (
-				<UpdateProfile {...currentUser} updateProfile={updateProfile} cancelEditing={cancelEditing} />
+				<UpdateProfile user={currentUser} updateProfile={updateProfile} cancelEditing={cancelEditing} />
 			) : (
-				<ViewProfile {...currentUser}>
+				<ViewProfile user={currentUser}>
 					{activeUser.id === currentUser.id && (
 						<Button type="button" label="Edit Profile" className="btn-primary" buttonClicked={editUser} />
 					)}

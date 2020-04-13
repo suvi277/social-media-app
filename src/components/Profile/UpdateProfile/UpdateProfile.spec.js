@@ -3,10 +3,16 @@ import { shallow } from 'enzyme';
 import { UpdateProfile } from './UpdateProfile';
 
 describe('UpdateProfile Component', () => {
-	const wrapper = shallow(<UpdateProfile />);
+	const mockUser = {
+		id: 1,
+		firstName: 'First',
+		lastName: 'Last',
+		email: 'first@gmail.com'
+	};
+	const wrapper = shallow(<UpdateProfile user={mockUser} />);
 
 	it('renders as expected', () => {
 		expect(wrapper).toMatchSnapshot();
 	});
-	//To Complet Test Cases
+	//TODO - ADD TESTCASES
 });

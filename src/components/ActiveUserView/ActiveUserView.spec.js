@@ -9,7 +9,7 @@ describe('ActiveUserView Component', () => {
 		lastName: 'Last',
 		email: 'first@gmail.com'
 	};
-	const wrapper = shallow(<ActiveUserView {...mockUser} />);
+	const wrapper = shallow(<ActiveUserView user={mockUser} />);
 
 	it('renders as expected', () => {
 		expect(wrapper).toMatchSnapshot();

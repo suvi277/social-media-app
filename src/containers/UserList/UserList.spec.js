@@ -79,7 +79,7 @@ describe('UserList container', () => {
 		it('should render UserView Componnent for all users except active user', () => {
 			const filteredUser = mockUsers.filter((user) => user.id !== mockUsers[0].id);
 			filteredUser.forEach((user, index) => {
-				expect(component.find(UserView).at(index).props().id).toBe(user.id);
+				expect(component.find(UserView).at(index).props().user).toBe(user);
 			});
 		});
 		it('should render the searchField', () => {
@@ -91,7 +91,7 @@ describe('UserList container', () => {
 			const searchStr = 'first3';
 			component.find('input[name="search"]').simulate('change', { target: { value: searchStr } });
 			const filteredUserView = component.find(UserView).filterWhere((node) => {
-				const { firstName, lastName, email } = node.props();
+				const { firstName, lastName, email } = node.props().user;
 				return (
 					firstName.toLowerCase().includes(searchStr) ||
 					lastName.toLowerCase().includes(searchStr) ||

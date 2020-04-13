@@ -36,5 +36,9 @@ export const ROUTES_CONFIG = [
 		path: '/profile/:id',
 		key: 'profile',
 		component: Profile
+	},
+	{
+		path: '*',
+		component: () => <Redirect to="/" />
 	}
 ];

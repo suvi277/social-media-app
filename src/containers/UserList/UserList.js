@@ -44,7 +44,7 @@ const UserList = ({ users, activeUser }) => {
 				className="input"
 			/>
 			<div className="user-lists">
-				{filteredUsers.map((user) => user.id !== activeUser.id && <UserView key={user.id} {...user} />)}
+				{filteredUsers.map((user) => user.id !== activeUser.id && <UserView key={user.id} user={user} />)}
 			</div>
 		</div>
 	);

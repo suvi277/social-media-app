@@ -3,17 +3,35 @@
 A small and simple social media example app, demonstrating how to use react and redux for building webapps. To save time for setting up the styles, the app is built with bootstrap, to make use of base styles.
 
 ## Getting started
-
-You can view a live demo over at https://suvi277.github.io/social-media-app/
-
 To get the frontend running locally:
 
-- Clone this repo
-- `yarn install` installs all req'd dependencies
-- `yarn start` starts the local server (this project uses create-react-app)
-- `yarn test` Launches the test runner in the interactive watch mode
-- `yarn deploy` deploys the app to github page
+### `Running Locally`
+```
+git clone git@github.com:suvi277/social-media-app.git
+cd social-media-app
+**yarn install** - starts the local server (this project uses create-react-app)
+**yarn start** starts the local server (this project uses create-react-app)
+```
 
+Open the app in your browser of choice at http://localhost:3000.
+
+### Authentication details
+
+Please use below example credential to **sign in** or else you can choose to **sign up** and create a user creds. But since this app doesn't consume any API or implements localstorage tp stpre data, so it wont be last when session ends.
+
+```
+**email:** 'suvi@example.com',
+**password:** 'suvi@123'
+```
+
+#### `yarn test`
+
+Launches the test runner in the interactive watch mode.
+
+#### `yarn build`
+
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ## Functionality overview
 
@@ -29,12 +47,10 @@ This project is not consuming API instead uses the mockData to get the users det
 - The App is Responsive
 - Added Unit testing
 
-## Missing Points
+## Improvement Points
 This section explains what was missed while developing and could be implemented further but couldn't due to lack of time
 
 - localStorage implemenation for signIn/SignUp
-- Error handling on form
-- Adding PropTypes
+- Validation/Error handling on forms
+- Adding JSDocs & .eslintrc
 - More test coverage
-- Adding JSDocs
-- Adding .eslintrc

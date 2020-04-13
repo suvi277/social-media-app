@@ -54,7 +54,7 @@ describe('Home container', () => {
 		it('should render ActiveUserView component with activeUser', () => {
 			expect(wrapper.find(ActiveUserView)).toHaveLength(1);
 			const component = wrapper.find('Home').props();
-			expect(wrapper.find(ActiveUserView).props()).toEqual(component.user);
+			expect(wrapper.find(ActiveUserView).props().user).toEqual(component.user);
 		});
 
 		it('should render UserList component', () => {

@@ -1,13 +1,9 @@
+import PropTypes from 'prop-types';
 import React, { useState } from 'react';
 import { TextField, Button } from '@app/components/UI';
 
-const UpdateProfile = ({ id, firstName, lastName, email, updateProfile, cancelEditing }) => {
-	const [ currentUser, setCurrentUser ] = useState({
-		id,
-		firstName,
-		lastName,
-		email
-	});
+const UpdateProfile = ({ user, updateProfile, cancelEditing }) => {
+	const [ currentUser, setCurrentUser ] = useState(user);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -48,6 +44,12 @@ const UpdateProfile = ({ id, firstName, lastName, email, updateProfile, cancelEd
 			<Button type="button" label="Cancel" className="btn-outline-primary" buttonClicked={cancelEditing} />
 		</div>
 	);
+};
+
+UpdateProfile.propTypes = {
+	cancelEditing: PropTypes.func,
+	updateProfile: PropTypes.func,
+	user: PropTypes.object.isRequired
 };
 
 export { UpdateProfile };

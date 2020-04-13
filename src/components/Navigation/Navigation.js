@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { ROUTES_CONFIG } from '@app/routes/routeConfig';
 import { NavLink } from 'react-router-dom';
@@ -30,6 +31,11 @@ const Navigation = ({ isAuthenticated, signOutUser }) => {
 			})}
 		</ul>
 	);
+};
+
+Navigation.propTypes = {
+	isAuthenticated: PropTypes.bool,
+	signOutUser: PropTypes.func
 };
 
 export { Navigation };

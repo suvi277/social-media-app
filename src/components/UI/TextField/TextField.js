@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './TextField.scss';
 
-const TextField = ({ name, type, placeholder, onChange, className, value, error, children, label, ...props }) => {
+const TextField = ({ name, type, placeholder, onChange, className, value, label }) => {
 	return (
 		<div className="form-group">
 			<label htmlFor={name}>{label}</label>
@@ -13,11 +14,19 @@ const TextField = ({ name, type, placeholder, onChange, className, value, error,
 				onChange={onChange}
 				value={value}
 				className={`form-control ${className}`}
-				style={error && { border: 'solid 1px red' }}
 			/>
-			{error && <p>{error}</p>}
 		</div>
 	);
+};
+
+TextField.propTypes = {
+	className: PropTypes.string,
+	label: PropTypes.string,
+	name: PropTypes.string,
+	onChange: PropTypes.func,
+	placeholder: PropTypes.string,
+	type: PropTypes.string,
+	value: PropTypes.string
 };
 
 export { TextField };

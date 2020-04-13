@@ -3,6 +3,7 @@ import { users } from '../mockData/users';
 
 export const initialState = {
 	users,
+	isSignedUp: false,
 	isEditing: false
 };
 
@@ -46,6 +47,7 @@ export const userProfiles = (state = initialState, action) => {
 			// Add the new user to the list
 			return {
 				...state,
+				isSignedUp: true,
 				users: [ ...state.users, newUser ]
 			};
 		default:

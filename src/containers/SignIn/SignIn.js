@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { signInUser } from '@app/actions';
 import { AuthForm, TextField, Button } from '@app/components/UI';
 
-const SignIn = ({ isSignedIn, signInUser, users }) => {
+const SignIn = ({ isSignedIn, isSignedUp, signInUser, users }) => {
 	const initialField = {
 		email: '',
 		password: ''
@@ -33,7 +33,7 @@ const SignIn = ({ isSignedIn, signInUser, users }) => {
 				// These could be created separated component
 				<p>Already Signed In</p>
 			) : (
-				<AuthForm title="Please Sign In">
+				<AuthForm title={isSignedUp ? `Now Sign In` : `Fresh-Sign In`}>
 					<form onSubmit={submitForm}>
 						<TextField
 							label="Email"
@@ -70,6 +70,7 @@ const SignIn = ({ isSignedIn, signInUser, users }) => {
 
 const mapStateToProps = ({ userAccount, userProfiles }) => ({
 	isSignedIn: userAccount.signedIn,
+	isSignedUp: userProfiles.isSignedUp,
 	users: userProfiles.users
 });
 

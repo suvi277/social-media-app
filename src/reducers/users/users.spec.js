@@ -53,6 +53,7 @@ describe('Users Reducer', () => {
 				})
 			).toEqual({
 				...initialState,
+				isSignedUp: true,
 				users: [ ...initialState.users, { ...mockUser, id: 6 } ]
 			});
 		});

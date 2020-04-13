@@ -76,7 +76,7 @@ describe('SignUp container', () => {
 		});
 
 		it('should map State to Props', () => {
-			const expectedPropKeys = [ 'isSignedIn', 'signUpUser' ];
+			const expectedPropKeys = [ 'signUpUser' ];
 			expect(Object.keys(component.props())).toEqual(expect.arrayContaining(expectedPropKeys));
 		});
 

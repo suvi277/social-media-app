@@ -2,7 +2,6 @@
 	"name": "social-media-app",
 	"version": "0.1.0",
 	"private": true,
-	"homepage": "https://suvi277.github.io/social-media-app",
 	"dependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
@@ -28,7 +27,7 @@
 		"build": "react-app-rewired build",
 		"test": "react-app-rewired test",
 		"eject": "react-app-rewired eject",
-		"predeploy": "yarn run build",
+		"predeploy": "yarn build",
 		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {

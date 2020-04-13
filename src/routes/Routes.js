@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router';
+import { withRouter, Switch, Route } from 'react-router';
 import AuthRoute from './AuthRoute';
 import { ROUTES_CONFIG } from './routeConfig';
 
@@ -13,4 +13,4 @@ const Routes = () => {
 	);
 };
 
-export default Routes;
+export default withRouter(Routes);

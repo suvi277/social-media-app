@@ -81,14 +81,10 @@ const SignUp = ({ signUpUser }) => {
 	);
 };
 
-const mapStateToProps = (state) => ({
-	isSignedIn: state.userAccount.signedIn
-});
-
 const mapDispatchToProps = (dispatch) => {
 	return {
 		signUpUser: (user) => dispatch(signUpUser(user))
 	};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(null, mapDispatchToProps)(SignUp);

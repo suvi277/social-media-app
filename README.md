@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React & Redux App
 
-## Available Scripts
+A small and simple social media example app, demonstrating how to use react and redux for building webapps. To save time for setting up the styles, the app is built with bootstrap, to make use of base styles.
 
-In the project directory, you can run:
+## Getting started
 
-### `yarn start`
+You can view a live demo over at https://suvi277.github.io/social-media-app/
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To get the frontend running locally:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Clone this repo
+- `yarn install` installs all req'd dependencies
+- `yarn start` starts the local server (this project uses create-react-app)
+- `yarn test` Launches the test runner in the interactive watch mode
+- `yarn deploy` deploys the app to github page
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Functionality overview
 
-### `yarn build`
+This project is not consuming API instead uses the mockData to get the users detail stored in a path
+ `src/reducers/mockData/users`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Authenticate users checks creds from mockData (sign/signup pages + signout link on navbar after signed in)
+- Home page which display the active user profile info and list of users with search text field
+- Search users by users first name, last name and email
+- On click of user's name (including active user) navigates to Profile page (/profile/:1d) to view their profile
+- Edit Button is visible on profile page for active user
+- On click of edit, user can update their details.
+- The App is Responsive
+- Added Unit testing
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Missing Points
+This section explains what was missed while developing and could be implemented further but couldn't due to lack of time
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- localStorage implemenation for signIn/SignUp
+- Error handling on form
+- Adding PropTypes
+- More test coverage
+- Adding JSDocs
+- Adding .eslintrc

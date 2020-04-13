@@ -2,6 +2,7 @@
 	"name": "social-media-app",
 	"version": "0.1.0",
 	"private": true,
+	"homepage": "https://suvi277.github.io/social-media-app/",
 	"dependencies": {
 		"@testing-library/jest-dom": "^4.2.4",
 		"@testing-library/react": "^9.3.2",
@@ -10,6 +11,7 @@
 		"connected-react-router": "^6.8.0",
 		"enzyme": "^3.11.0",
 		"enzyme-adapter-react-16": "^1.15.2",
+		"gh-pages": "^2.2.0",
 		"history": "^4.10.1",
 		"node-sass": "^4.13.1",
 		"react": "^16.13.1",
@@ -25,7 +27,9 @@
 		"start": "react-app-rewired start",
 		"build": "react-app-rewired build",
 		"test": "react-app-rewired test",
-		"eject": "react-app-rewired eject"
+		"eject": "react-app-rewired eject",
+		"predeploy": "yarn run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": "react-app"

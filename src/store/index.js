@@ -3,7 +3,9 @@ import { routerMiddleware } from 'connected-react-router';
 import * as History from 'history';
 import createRootReducer from '@app/reducers';
 
-export const history = History.createBrowserHistory();
+export const history = History.createBrowserHistory({
+	basename: process.env.PUBLIC_URL
+});
 
 const initialState = {};
 const enhancers = [];

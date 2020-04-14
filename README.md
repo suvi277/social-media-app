@@ -3,9 +3,12 @@
 A small and simple social media example app, demonstrating how to use react and redux for building webapps. To save time for setting up the styles, the app is built with bootstrap, to make use of base styles.
 
 ## Getting started
+
+You can view a live demo over at https://suvi277.github.io/social-media-app/
+
 To get the frontend running locally:
 
-### Running Locally
+### Steps to start the local server
 ```markdown
 git clone git@github.com:suvi277/social-media-app.git
 cd social-media-app

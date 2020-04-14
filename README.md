@@ -12,7 +12,7 @@ To get the frontend running locally:
 ```markdown
 git clone git@github.com:suvi277/social-media-app.git
 cd social-media-app
-**yarn install** - starts the local server (this project uses create-react-app)
+**yarn install** - installs the required dependency
 **yarn start** starts the local server (this project uses create-react-app)
 ```
 
@@ -20,7 +20,7 @@ Open the app in your browser of choice at http://localhost:3000.
 
 ### Authentication details
 
-Please use below example credential to **sign in** or else you can choose to **sign up** and create a user creds. But since this app doesn't consume any API or implements localstorage tp stpre data, so it wont be last when session ends.
+Please use below example credential to **sign in** or else you can choose to **sign up** and create a user creds. But since this app doesn't consume any API or implements localstorage to stpre data, so it wont be last when session ends.
 
 ```markdown
 **email:** 'suvi@example.com',

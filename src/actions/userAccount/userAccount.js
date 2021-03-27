@@ -5,7 +5,7 @@ import { history } from '@app/store';
  * Sign in user 
  */
 export function signInUser(email, password) {
-	history.push('/home');
+	history.push('/');
 	return {
 		type: SIGN_IN,
 		payload: {

@@ -28,7 +28,7 @@ const SignUp = ({ signUpUser }) => {
 		}
 	};
 	return (
-		<div className="col-12">
+		<div className="col-12 center-form">
 			<AuthForm title="Sign Up">
 				<form name="form" onSubmit={submitForm}>
 					<TextField

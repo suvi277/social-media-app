@@ -4,13 +4,18 @@ import { Link } from 'react-router-dom';
 import './UserView.scss';
 
 const UserView = ({ user }) => {
-	const { email, firstName, lastName, id } = user;
+  const { login, name, email, picture } = user
 	return (
 		<div className="user-list-row">
-			<Link to={`/profile/${id}`}>
-				<h5>{`${firstName} ${lastName}`}</h5>
-			</Link>
-			<span className="small">{email}</span>
+      <div className="d-flex">
+        <img className="rounded-circle" src={picture.thumbnail} alt={name.first}/>
+        <div className="pl-2">
+          <Link to={`/profile/${login.username}`}>
+            <h6 className="mb-0">{`${name.title} ${name.first} ${name.last}`}</h6>
+          </Link>
+          <small>{email}</small>
+        </div>
+      </div>
 		</div>
 	);
 };

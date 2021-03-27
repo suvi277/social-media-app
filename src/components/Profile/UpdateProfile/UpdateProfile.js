@@ -6,8 +6,8 @@ const UpdateProfile = ({ user, updateProfile, cancelEditing }) => {
 	const [ currentUser, setCurrentUser ] = useState(user);
 
 	const handleChange = (e) => {
-		const { name, value } = e.target;
-		setCurrentUser((user) => ({ ...user, [name]: value }));
+    const { name, value } = e.target;
+		setCurrentUser((user) => ({ ...user, name: {...user.name, [name]: value }, [name]: value }));
 	};
 
 	const updateClicked = (e) => {
@@ -18,18 +18,18 @@ const UpdateProfile = ({ user, updateProfile, cancelEditing }) => {
 		<div className="w-50">
 			<TextField
 				label="First Name"
-				name="firstName"
+				name="first"
 				type="text"
 				onChange={handleChange}
-				value={currentUser.firstName}
+				value={currentUser.name.first}
 				className="input"
 			/>
 			<TextField
 				label="Last Name"
-				name="lastName"
+				name="last"
 				onChange={handleChange}
 				type="text"
-				value={currentUser.lastName}
+				value={currentUser.name.last}
 				className="input"
 			/>
 			<TextField

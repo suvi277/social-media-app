@@ -1,21 +1,35 @@
-import { UPDATE_PROFILE, EDIT_USER, CANCEL_EDIT_USER, SIGN_UP } from '@app/constants/actionTypes';
+import { UPDATE_PROFILE, EDIT_USER, CANCEL_EDIT_USER, SIGN_UP, REQUEST_USERS, LOADED_USERS, REJECTED_USERS } from '@app/constants/actionTypes';
 import { users } from '../mockData/users';
 
 export const initialState = {
-	users,
+  status: 'init',
+  users: users,
 	isSignedUp: false,
 	isEditing: false
 };
 
 export const userProfiles = (state = initialState, action) => {
 	switch (action.type) {
+    // Fetch the user lists
+    case REQUEST_USERS:
+        return { ...state, status: 'loading' };
+    // Load the user lists
+    case LOADED_USERS:
+        return {
+            ...state,
+            users: [...state.users, ...action.payload],
+            status: 'loaded'
+        };
+    // Error on fetching the user lists
+    case REJECTED_USERS:
+        return { ...state, error: action.payload, status: 'error' };
 		// Update the user to current user lists
 		case UPDATE_PROFILE:
 			const { user } = action.payload;
 			let updatedUsers = [ ...state.users ];
 
-			const currentIndex = updatedUsers.findIndex(({ id }) => {
-				return id === user.id;
+			const currentIndex = updatedUsers.findIndex(({ login }) => {
+				return login.username === user.login.username;
 			});
 
 			updatedUsers[currentIndex] = { ...updatedUsers[currentIndex], ...user };

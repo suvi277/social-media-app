@@ -1,11 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { usersRequested } from '@app/actions/users/users';
 import { Routes } from '@app/routes';
 import { connect } from 'react-redux';
 import { signOutUser } from '@app/actions';
 import { Footer } from '@app/components/Footer';
 import { Header } from '@app/components/Header';
 
-const App = ({ isSignedIn, signOutUser }) => {
+const App = ({ isSignedIn, signOutUser, getUsers }) => {
+  useEffect(
+		() => { 
+    getUsers({
+      results: 50
+    })
+		},
+		[getUsers]
+  )
+  
 	return (
 		<Fragment>
 			<Header isAuthenticated={isSignedIn} signOutUser={signOutUser} />
@@ -22,7 +32,8 @@ const mapStateToProps = ({ userAccount }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-	signOutUser: () => dispatch(signOutUser())
+  signOutUser: () => dispatch(signOutUser()),
+  getUsers: (params) => dispatch(usersRequested(params)) 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

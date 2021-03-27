@@ -4,14 +4,13 @@ import { history } from '@app/store';
 /**
  * Sign in user 
  */
-export function signInUser(email, password, users) {
-	history.push('/');
+export function signInUser(email, password) {
+	history.push('/home');
 	return {
 		type: SIGN_IN,
 		payload: {
 			email,
 			password,
-			users
 		}
 	};
 }

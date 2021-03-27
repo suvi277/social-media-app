@@ -10,7 +10,7 @@ const Home = ({ user }) => {
 				<ActiveUserView user={user} />
 			</div>
 			<div className="col-12 col-md-8">
-				<h2>All Users List</h2>
+				<h2>Friends List</h2>
 				<UserList />
 			</div>
 		</div>

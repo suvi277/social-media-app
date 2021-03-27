@@ -1,37 +1,26 @@
 export const users = [
 	{
-		id: 1,
-		email: 'suvi@example.com',
-		firstName: 'Suvarna',
-		lastName: 'Mondal',
-		password: 'suvi@123'
-	},
-	{
-		id: 2,
-		email: 'mark@gmail.com',
-		firstName: 'Mark',
-		lastName: 'Zeal',
-		password: 'password5'
-	},
-	{
-		id: 3,
-		email: 'ajay@yahoo.com',
-		firstName: 'Ajay',
-		lastName: 'Devgan',
-		password: 'password9'
-	},
-	{
-		id: 4,
-		email: 'will@yahoo.com',
-		firstName: 'William',
-		lastName: 'Andrews',
-		password: 'password3'
-	},
-	{
-		id: 5,
-		email: 'abraham@yahoo.com',
-		firstName: 'Abin',
-		lastName: 'Abraham',
-		password: 'password3'
-	}
+    name: {
+      "title": "Ms",
+      "first": "Suvarna",
+      "last": "Mondal"
+    },
+    email: 'suvi@example.com',
+    password: 'suvi@123',
+    gender: 'female',
+    dob: {
+      date: "1993-07-20T09:44:18.674Z",
+      age: 26
+    },
+    registered: {
+      date: "2002-05-21T10:59:49.966Z",
+      age: 17
+    },
+    picture: {
+      large: "https://media-exp1.licdn.com/dms/image/C4E03AQEdmWit79hS7Q/profile-displayphoto-shrink_400_400/0/1581451654113?e=1622073600&v=beta&t=vP3NOapfSzAsi6XPwwfSN2hkCbEvvAwObuBIeNHXA8c",
+    },
+    login: {
+      username: "suvi@277",
+    },
+  }
 ];

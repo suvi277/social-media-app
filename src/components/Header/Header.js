@@ -5,7 +5,7 @@ import { Navigation } from '@app/components/Navigation';
 
 const Header = (props) => {
 	return (
-		<header className="sticky-top navbar bg-dark p-0">
+		<header className="sticky-top navbar p-0">
 			<div className="container">
 				<Logo />
 				<Navigation {...props} />

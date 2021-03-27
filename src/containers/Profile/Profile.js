@@ -9,11 +9,9 @@ const Profile = ({ users, currentUserId, activeUser, isEditing, updateProfile, c
 
 	useEffect(
 		() => {
-			// set the current user from user lists by id
+      // set the current user from user lists by id
 			setCurrentUser(
-				users.find((user) => {
-					return user.id === currentUserId;
-				})
+				users.find((user) => user.login.username === currentUserId)
 			);
 		},
 		[ users, currentUserId ]
@@ -21,16 +19,22 @@ const Profile = ({ users, currentUserId, activeUser, isEditing, updateProfile, c
 
 	return (
 		<Fragment>
-			<h2>Profile Details</h2>
-			{isEditing ? (
-				<UpdateProfile user={currentUser} updateProfile={updateProfile} cancelEditing={cancelEditing} />
-			) : (
-				<ViewProfile user={currentUser}>
-					{activeUser.id === currentUser.id && (
-						<Button type="button" label="Edit Profile" className="btn-primary" buttonClicked={editUser} />
-					)}
-				</ViewProfile>
-			)}
+      { currentUser &&
+        <div>
+          <h4>Profile Details</h4>
+          {
+            isEditing ? (
+            <UpdateProfile user={currentUser} updateProfile={updateProfile} cancelEditing={cancelEditing} />
+          ) : (
+            <ViewProfile user={currentUser}>
+              {activeUser.id === currentUser.id && (
+                <Button type="button" label="Edit Profile" className="btn-primary mt-4" buttonClicked={editUser} />
+              )}
+            </ViewProfile>
+          )
+          }
+        </div>
+      }
 		</Fragment>
 	);
 };
@@ -49,7 +53,7 @@ const mapStateToProps = (state, ownProps) => {
 		users: userProfiles.users,
 		isEditing: userProfiles.isEditing,
 		activeUser: userAccount.activeUser,
-		currentUserId: Number(id)
+		currentUserId: id
 	};
 };
 

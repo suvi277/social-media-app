@@ -3,7 +3,6 @@ import { withRouter, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const AuthRoute = ({ component: Component, isSignedIn, ...rest }) => {
-	debugger;
 	return (
 		<Route
 			{...rest}

@@ -33,7 +33,7 @@ const SignIn = ({ isSignedIn, isSignedUp, signInUser, users }) => {
 				// These could be created separated component
 				<p>Already Signed In</p>
 			) : (
-				<AuthForm title={isSignedUp ? `Now Sign In` : `Fresh-Sign In`}>
+				<AuthForm title={isSignedUp ? `Now Sign In` : `Sign In`}>
 					<form onSubmit={submitForm}>
 						<TextField
 							label="Email"

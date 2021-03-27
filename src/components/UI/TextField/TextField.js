@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import './TextField.scss';
 
-const TextField = ({ name, type, placeholder, onChange, className, value, label }) => {
+const TextField = ({ name, type, placeholder, onChange, className, value }) => {
 	return (
 		<div className="form-group">
-			<label htmlFor={name}>{label}</label>
 			<input
 				id={name}
 				name={name}

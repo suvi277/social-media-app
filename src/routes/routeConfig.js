@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 
 export const ROUTES_CONFIG = [
 	{
-		path: '/',
+		path: '/home',
 		key: 'home',
 		label: 'Home',
 		exact: true,

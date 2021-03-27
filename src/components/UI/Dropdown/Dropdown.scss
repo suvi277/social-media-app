@@ -1,0 +1,17 @@
+.dropdown {
+    background: url(chevron-down.svg) no-repeat 94% 52%;
+    padding: 5px 40px 5px 10px;
+    border: 1px solid #00BFA5;
+    color: #00BFA5;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin-left: 15px;
+
+    &.fill {
+        background: url(chevron-down-white.svg) no-repeat 94% 52%;
+        background-color: #00BFA5;
+        color: #FFFFFF;
+        border: none;
+    }
+}

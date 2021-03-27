@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/social-media-app/static/css/main.644d83ef.chunk.css",
-    "main.js": "/social-media-app/static/js/main.ba02c71b.chunk.js",
-    "main.js.map": "/social-media-app/static/js/main.ba02c71b.chunk.js.map",
-    "runtime-main.js": "/social-media-app/static/js/runtime-main.08fc9a72.js",
-    "runtime-main.js.map": "/social-media-app/static/js/runtime-main.08fc9a72.js.map",
-    "static/js/2.c1aecaef.chunk.js": "/social-media-app/static/js/2.c1aecaef.chunk.js",
-    "static/js/2.c1aecaef.chunk.js.map": "/social-media-app/static/js/2.c1aecaef.chunk.js.map",
+    "main.css": "/social-media-app/static/css/main.4137e69e.chunk.css",
+    "main.js": "/social-media-app/static/js/main.f93ab37d.chunk.js",
+    "main.js.map": "/social-media-app/static/js/main.f93ab37d.chunk.js.map",
+    "runtime-main.js": "/social-media-app/static/js/runtime-main.48021da5.js",
+    "runtime-main.js.map": "/social-media-app/static/js/runtime-main.48021da5.js.map",
+    "static/js/2.dad03880.chunk.js": "/social-media-app/static/js/2.dad03880.chunk.js",
+    "static/js/2.dad03880.chunk.js.map": "/social-media-app/static/js/2.dad03880.chunk.js.map",
     "index.html": "/social-media-app/index.html",
-    "precache-manifest.a59a56e6aa3cb4cfb8367689e28e26f7.js": "/social-media-app/precache-manifest.a59a56e6aa3cb4cfb8367689e28e26f7.js",
+    "precache-manifest.2a98ea8365e9b7eb15805f8cfdd0d718.js": "/social-media-app/precache-manifest.2a98ea8365e9b7eb15805f8cfdd0d718.js",
     "service-worker.js": "/social-media-app/service-worker.js",
-    "static/css/main.644d83ef.chunk.css.map": "/social-media-app/static/css/main.644d83ef.chunk.css.map",
-    "static/js/2.c1aecaef.chunk.js.LICENSE.txt": "/social-media-app/static/js/2.c1aecaef.chunk.js.LICENSE.txt",
+    "static/css/main.4137e69e.chunk.css.map": "/social-media-app/static/css/main.4137e69e.chunk.css.map",
+    "static/js/2.dad03880.chunk.js.LICENSE.txt": "/social-media-app/static/js/2.dad03880.chunk.js.LICENSE.txt",
+    "static/media/Dropdown.scss": "/social-media-app/static/media/chevron-down.9fc50e21.svg",
+    "static/media/logo.png": "/social-media-app/static/media/logo.ec468176.png",
     "static/media/profile.png": "/social-media-app/static/media/profile.a8b203f3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.08fc9a72.js",
-    "static/js/2.c1aecaef.chunk.js",
-    "static/css/main.644d83ef.chunk.css",
-    "static/js/main.ba02c71b.chunk.js"
+    "static/js/runtime-main.48021da5.js",
+    "static/js/2.dad03880.chunk.js",
+    "static/css/main.4137e69e.chunk.css",
+    "static/js/main.f93ab37d.chunk.js"
   ]
 }

@@ -4,7 +4,7 @@ import { users } from '../mockData/users';
 const storage =  JSON.parse(localStorage.getItem("user"))
 
 export const initialState = {
-	signedIn: storage.isAuthenticated ? true : false,
+	signedIn: storage?.isAuthenticated ? true : false,
 	activeUser: storage || {}
 };
 

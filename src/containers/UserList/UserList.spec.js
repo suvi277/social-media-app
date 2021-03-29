@@ -8,23 +8,79 @@ import { UserView } from '@app/components/UserView';
 const mockStore = configureStore([]);
 const mockUsers = [
 	{
-		id: 1,
-		firstName: 'First',
-		lastName: 'Last',
-		email: 'first@gmail.com'
-	},
+    id: 1,
+    name: {
+      title: 'Ms',
+      first: 'Suvarna',
+      last: 'Mondal'
+    },
+    email: 'suvi@example.com',
+    password: 'suvi@123',
+    gender: 'female',
+    dob: {
+      date: "1993-07-20T09:44:18.674Z",
+      age: 26
+    },
+    registered: {
+      date: "2002-05-21T10:59:49.966Z",
+      age: 17
+    },
+    picture: {
+      large: "https://media-exp1.licdn.com/dms/image/C4E03AQEdmWit79hS7Q/profile-displayphoto-shrink_400_400/0/1581451654113?e=1622073600&v=beta&t=vP3NOapfSzAsi6XPwwfSN2hkCbEvvAwObuBIeNHXA8c",
+    },
+    login: {
+      username: "suvi@277",
+    },
+  },
 	{
-		id: 2,
-		firstName: 'First3',
-		lastName: 'Last',
-		email: 'first3.last2@gmail.com'
-	},
-	{
-		id: 3,
-		firstName: 'First3',
-		lastName: 'Last3',
-		email: 'first3@gmail.com'
-	}
+    id: 1,
+    name: {
+      title: 'Ms',
+      first: 'Suvarna',
+      last: 'Mondal'
+    },
+    email: 'suvi@example.com',
+    password: 'suvi@123',
+    gender: 'female',
+    dob: {
+      date: "1993-07-20T09:44:18.674Z",
+      age: 26
+    },
+    registered: {
+      date: "2002-05-21T10:59:49.966Z",
+      age: 17
+    },
+    picture: {
+      large: "https://media-exp1.licdn.com/dms/image/C4E03AQEdmWit79hS7Q/profile-displayphoto-shrink_400_400/0/1581451654113?e=1622073600&v=beta&t=vP3NOapfSzAsi6XPwwfSN2hkCbEvvAwObuBIeNHXA8c",
+    },
+    login: {
+      username: "suvi@277",
+    },
+  },{
+    id: 1,
+    name: {
+      title: 'Ms',
+      first: 'Suvarna',
+      last: 'Mondal'
+    },
+    email: 'suvi@example.com',
+    password: 'suvi@123',
+    gender: 'female',
+    dob: {
+      date: "1993-07-20T09:44:18.674Z",
+      age: 26
+    },
+    registered: {
+      date: "2002-05-21T10:59:49.966Z",
+      age: 17
+    },
+    picture: {
+      large: "https://media-exp1.licdn.com/dms/image/C4E03AQEdmWit79hS7Q/profile-displayphoto-shrink_400_400/0/1581451654113?e=1622073600&v=beta&t=vP3NOapfSzAsi6XPwwfSN2hkCbEvvAwObuBIeNHXA8c",
+    },
+    login: {
+      username: "suvi@277",
+    },
+  }
 ];
 
 describe('UserList container', () => {
@@ -72,7 +128,7 @@ describe('UserList container', () => {
 			);
 		});
 
-		it('should have the activeUser prroperty from the state', () => {
+		it('should have the activeUser property from the state', () => {
 			expect(component.find('UserList').prop('activeUser')).toBe(mockUsers[0]);
 		});
 
@@ -84,7 +140,7 @@ describe('UserList container', () => {
 		});
 		it('should render the searchField', () => {
 			expect(component.find('TextField')).toHaveLength(1);
-			expect(component.find('TextField').prop('label')).toBe('Search');
+			expect(component.find('TextField').prop('placeholder')).toBe('Search by Name');
 		});
 
 		it('should render UserView Componnent for the searched users', () => {

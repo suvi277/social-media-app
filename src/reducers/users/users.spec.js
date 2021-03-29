@@ -9,10 +9,15 @@ describe('Users Reducer', () => {
 	describe('UPDATE_PROFILE', () => {
 		it('should update the changed user details to correct user ', () => {
 			const mockUser = {
-				id: 1,
-				firstName: 'First',
-				lastName: 'Last',
-				email: 'first@gmail.com'
+        name: {
+          title: 'Ms',
+          first: 'First',
+				  last: 'Last',
+        },
+				email: 'first@gmail.com',
+        login: {
+          username: "suvi@277",
+        },
 			};
 			const userInfo = userProfiles(initialState, {
 				type: UPDATE_PROFILE,
@@ -54,7 +59,7 @@ describe('Users Reducer', () => {
 			).toEqual({
 				...initialState,
 				isSignedUp: true,
-				users: [ ...initialState.users, { ...mockUser, id: 6 } ]
+				users: [ ...initialState.users, { ...mockUser, id: 2 } ]
 			});
 		});
 	});

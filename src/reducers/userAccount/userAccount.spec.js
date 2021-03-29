@@ -9,12 +9,30 @@ describe('User Account Reducer', () => {
 	describe('SIGN_IN', () => {
 		it('should return signedIn to true and activeUser to passed email and password', () => {
 			const mockUser = {
-				id: 2,
-				email: 'fname2@example.com',
-				firstName: 'FirstName2',
-				lastName: 'LastName2',
-				password: 'password2'
-			};
+        id: 1,
+        name: {
+          title: 'Ms',
+          first: 'Suvarna',
+          last: 'Mondal'
+        },
+        email: 'suvi@example.com',
+        password: 'suvi@123',
+        gender: 'female',
+        dob: {
+          date: "1993-07-20T09:44:18.674Z",
+          age: 26
+        },
+        registered: {
+          date: "2002-05-21T10:59:49.966Z",
+          age: 17
+        },
+        picture: {
+          large: "https://media-exp1.licdn.com/dms/image/C4E03AQEdmWit79hS7Q/profile-displayphoto-shrink_400_400/0/1581451654113?e=1622073600&v=beta&t=vP3NOapfSzAsi6XPwwfSN2hkCbEvvAwObuBIeNHXA8c",
+        },
+        login: {
+          username: "suvi@277",
+        },
+      };
 			const state = {
 				...initialState
 			};
@@ -23,8 +41,8 @@ describe('User Account Reducer', () => {
 				userAccount(state, {
 					type: SIGN_IN,
 					payload: {
-						email: 'fname2@example.com',
-						password: 'password2',
+						email: 'suvi@example.com',
+						password: 'suvi@123',
 						users: [ mockUser ]
 					}
 				})

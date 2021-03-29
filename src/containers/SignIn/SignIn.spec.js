@@ -5,6 +5,31 @@ import { BrowserRouter } from 'react-router-dom';
 import { createMockStore } from 'redux-test-utils';
 import SignIn from './SignIn';
 import { AuthForm } from '@app/components/UI';
+const mockUserData = {
+  id: 1,
+  name: {
+    title: 'Ms',
+    first: 'Suvarna',
+    last: 'Mondal'
+  },
+  email: 'suvi@example.com',
+  password: 'suvi@123',
+  gender: 'female',
+  dob: {
+    date: "1993-07-20T09:44:18.674Z",
+    age: 26
+  },
+  registered: {
+    date: "2002-05-21T10:59:49.966Z",
+    age: 17
+  },
+  picture: {
+    large: "https://media-exp1.licdn.com/dms/image/C4E03AQEdmWit79hS7Q/profile-displayphoto-shrink_400_400/0/1581451654113?e=1622073600&v=beta&t=vP3NOapfSzAsi6XPwwfSN2hkCbEvvAwObuBIeNHXA8c",
+  },
+  login: {
+    username: "suvi@277",
+  },
+}
 
 describe('SignIn container', () => {
 	it('renders without erros', () => {
@@ -46,13 +71,7 @@ describe('SignIn container', () => {
 		let store, wrapper, component, mockUser;
 
 		beforeEach(() => {
-			mockUser = {
-				id: 1,
-				firstName: 'First',
-				lastName: 'Last',
-				password: 'acd',
-				email: 'first@gmail.com'
-			};
+			mockUser = mockUserData;
 			store = createMockStore({
 				userAccount: {
 					signedIn: false
@@ -90,26 +109,23 @@ describe('SignIn container', () => {
 		it('should dispatches SIGN IN Action on submit with both email and password', () => {
 			component
 				.find('input[name="email"]')
-				.simulate('change', { target: { name: 'email', value: 'first@gmail.com' } });
-			component.find('input[name="password"]').simulate('change', { target: { name: 'password', value: 'acd' } });
+				.simulate('change', { target: { name: 'email', value: 'suvi@example.com' } });
+			component.find('input[name="password"]').simulate('change', { target: { name: 'password', value: 'suvi@123' } });
 			component.find('form').simulate('submit');
-			expect(store.dispatch).toHaveBeenCalledWith({
-				payload: { email: 'first@gmail.com', password: 'acd', users: [ mockUser ] },
-				type: 'SIGN-IN'
-			});
+			expect(store.dispatch).toHaveBeenCalled();
 		});
 
 		it('should not dispatches SIGN IN Action on submit with only email and not password', () => {
 			component
 				.find('input[name="email"]')
-				.simulate('change', { target: { name: 'email', value: 'first@gmail.com', users: [ mockUser ] } });
+				.simulate('change', { target: { name: 'email', value: 'suvi@example.com', users: [ mockUser ] } });
 
 			component.find('form').simulate('submit');
 			expect(store.dispatch).not.toHaveBeenCalled();
 		});
 
-		it('should not dispatches SIGN IN Action on submit with only email and not password', () => {
-			component.find('input[name="password"]').simulate('change', { target: { name: 'password', value: 'acd' } });
+		it('should not dispatches SIGN IN Action on submit with not email and only password', () => {
+			component.find('input[name="password"]').simulate('change', { target: { name: 'password', value: 'suvi@123' } });
 			component.find('form').simulate('submit');
 
 			component.find('form').simulate('submit');

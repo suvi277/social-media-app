@@ -58,7 +58,7 @@ export const userProfiles = (state = initialState, action) => {
 			// Create a newUser Object with the payload and adding the new id
 			const newUser = { ...signedUpUser, id: generateNewId(state.users) };
 
-			// Add the new user to the list
+      // Add the new user to the list
 			return {
 				...state,
 				isSignedUp: true,
@@ -72,9 +72,7 @@ export const userProfiles = (state = initialState, action) => {
 const generateNewId = (users) => {
 	const highestIndex = Math.max.apply(
 		Math,
-		users.map((user) => {
-			return user.id;
-		})
+		users.map((user) => user.id)
 	);
 	return highestIndex + 1;
 };
